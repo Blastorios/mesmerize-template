@@ -1,0 +1,22 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "mesmerize-template"
+version = "0.1.0"
+description = "A base template for the mesmerize modules. Allows developers (internal and external) to create extensions with ease."
+authors = ["Mesmerizelab <support@mesmerizelab.io>"]
+license = "GNU GPL v3.0"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+setuptools = "^=50.3.0"
+wheel = "^=0.35.0"
+pip = "^=20.2.0"
+
+[tool.poetry.urls]
+Documentation = "https://docs.mesmerizelab.io/"
+Bug Tracker = "https://github.com/mesmerizelab/<module_name>/issues"
+
+[tool.poetry.dev-dependencies]
