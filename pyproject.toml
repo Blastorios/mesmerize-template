@@ -1,22 +1,83 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["flit"]
+build-backend = "flit.buildapi"
 
-[tool.poetry]
-name = "mesmerize-template"
-version = "0.1.0"
-description = "A base template for the mesmerize modules. Allows developers (internal and external) to create extensions with ease."
-authors = ["Mesmerizelab <support@mesmerizelab.io>"]
-license = "GNU GPL v3.0"
+[tool.flit.metadata]
+module = "mesmerize-template"
+author = "Mesmerizelab"
+author-email = "help@mesmerizelab.io"
+homepage = "https://github.com/mesmerizelab"
+classifiers = [
+    "Topic :: Scientific/Engineering :: Visualization :: Web",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Research",
+    "Intended Audience :: Science",
+    "Intended Audience :: Analysis",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python",
+    "Topic :: Internet",
+    "Typing :: Typed",
+    "Development Status :: Alpha",
+    "Environment :: Web Environment",
+    "License :: OSI Approved :: GNU GPL v3.0 License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
 
-[tool.poetry.dependencies]
-python = "^3.6"
-setuptools = "^=50.3.0"
-wheel = "^=0.35.0"
-pip = "^=20.2.0"
+requires = [
+    "fastapi>=0.60.0",
+    "cycler==0.10.0",
+    "dask>=1.1.1",
+    "future>=0.18.2",
+    "h5py>=2.10.0",
+    "ipykernel>=4.10",
+    "ipython>=7.15.0",
+    "ipyparallel>=6.3",
+    "MarkupSafe>=1.1.1",
+    "matplotlib<=3.2.1",
+    "opencv-contrib-python>=4.2",
+    "opencv-python>=4.2",
+    "pandas~=0.25.3",  # do not change
+    "Pillow>=5.4.1",
+    "psutil~=5.7.0",
+    "PyQt5>=5.9.2,<=5.12",
+    "python-dateutil>=2.8.0",
+    "QtPy>=1.6.0",
+    "qtap",
+    "scikit-image==0.17.2",  # do not change
+    "scikit-learn>=0.20.2",  # do not change
+    "scipy>=1.2.1",  # do not change
+    "seaborn==0.9.0",  # do not change
+    "spyder==3.3.3",  # do not change
+    "tifffile",  # do not change
+    "tqdm>=4.37.0",
+    "PeakUtils",  # caiman requirement
+    "tables>=3.6.1",
+    "joblib>=0.15.1",
+    "tslearn~=0.2.2",  # had to remove because of windows
+    "graphviz>=0.13",
+    "numba>=0.50.0",
+    #"bottleneck==1.2.1",  # do not change
+    "holoviews",
+    "jupyter",
+    "pynwb",  # caiman requirement
+    "pyqtgraph",
+    #"tensorflow~=1.15.0",  # do not change, caiman requirement
+    "tk",  # do not change
+    "tcl",
+]
 
-[tool.poetry.urls]
-Documentation = "https://docs.mesmerizelab.io/"
-Bug Tracker = "https://github.com/mesmerizelab/<module_name>/issues"
+description-file = "README.md"
+requires-python = "==3.6"
 
-[tool.poetry.dev-dependencies]
+[tool.flit.metadata.urls]
+Documentation = "https://mesmerizelab.io/"
+
+[tool.flit.metadata.requires-extra]
+
+[tool.isort]
+profile = "black"
+known_third_party = ["fastapi", "pydantic", "starlette"]
